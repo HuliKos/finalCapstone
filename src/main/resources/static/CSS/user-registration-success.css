@@ -1,0 +1,39 @@
+Body {
+    font-family: Calibri, Helvetica, sans-serif;
+    background-color: #D0B8A8;
+}
+
+h1{
+    font-family: 'Savoye LET', sans-serif;
+    font-size: 35px;
+    color: #F8EDE3;
+}
+
+p {
+    font-family: 'Asbigan', sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 27px;
+    padding:0px;
+    margin: 2px;
+    margin-left: 20px;
+    color: #815B5B;
+}
+
+.msgs{
+    font-size: 25px;
+    text-transform: capitalize;
+    color: #F8EDE3;
+}
+
+button{
+    margin-left: 20px;
+    background-color: #F8EDE3;
+    border-color: #815B5B;
+    color: #F8EDE3;
+    margin-top:20px;
+}
+
+a {
+    text-decoration: none;
+}

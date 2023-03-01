@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Add Contract Page</title>
+  <link th:href="@{/CSS/user-login.css}" rel="stylesheet" />
+</head>
+
+<body>
+<center> <h1> Create New Contract </h1> </center>
+<form action="#" th:action="@{'/{username}/add-contract-result'(username=${username})}" th:object="${contract}" method="post">
+  <div class="container">
+    <p class="msg"><strong th:if="${msg != null}" th:text="${msg}"></strong></p>
+    <label>Title: </label>
+    <input type="text" placeholder="Enter Contract Title" name="title" th:field="*{title}" required>
+    <label>Amount : </label>
+    <input type="text" placeholder="Enter Contract Amount" name="amount" th:field="*{amount}" required>
+    <label>Start Date : </label>
+    <input type="text" placeholder="Enter Start Date" name="startDate" th:field="*{startDate}" required>
+    <label>End Date : </label>
+    <input type="text" placeholder="Enter End Date" name="endDate" th:field="*{endDate}" required>
+    <button type="submit">Create Contract</button>
+  </div>
+</form>
+</body>
+
+</html>

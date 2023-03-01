@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login Page</title>
+    <link th:href="@{/CSS/user-login.css}" rel="stylesheet" />
+</head>
+
+<body>
+<center> <h1> User Login </h1> </center>
+<form action="#" th:action="@{/login/result}" th:object="${loginAttempt}" method="post">
+    <div class="container">
+        <p class="msg"><strong th:if="${msg != null}" th:text="${msg}"></strong></p>
+        <label>Username : </label>
+        <input type="text" placeholder="Enter Username" name="username" th:field="*{username}" required>
+        <label>Password : </label>
+        <input type="password" placeholder="Enter Password" name="password" th:field="*{password}" required>
+        <button type="submit">Login</button>
+        <p><input type="checkbox" checked="checked"> Remember me</p>
+        <p><a href="/register"> Register </a></p>
+        <p><a href="#"> Forgot your password? </a></p>
+    </div>
+</form>
+</body>
+
+</html>
+

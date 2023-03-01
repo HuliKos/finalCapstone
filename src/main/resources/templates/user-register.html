@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>User Login Page</title>
+    <link th:href="@{/CSS/user-login.css}" rel="stylesheet" />
+</head>
+
+<body>
+<center> <h1> User Login Form </h1> </center>
+<form action="#" th:action="@{/register/save}" th:object="${user}" method="post">
+    <div class="container">
+        <p class="msg"><strong th:if="${msg != null}" th:text="${msg}"></strong></p>
+        <label>First Name : </label>
+        <input type="text" placeholder="Enter First Name" name="firstName" th:field="*{firstName}" required>
+        <label>Last Name : </label>
+        <input type="text" placeholder="Enter Last Name" name="lastName" th:field="*{lastName}" required>
+        <label>Username : </label>
+        <input type="text" placeholder="Enter Username" name="username" th:field="*{username}" required>
+        <label>Password : </label>
+        <input type="password" placeholder="Enter Password" name="password" th:field="*{password}" required>
+        <label>Email : </label>
+        <input type="text" placeholder="Enter Email" name="email" th:field="*{email}" required>
+        <label>Phone : </label>
+        <input type="text" placeholder="Enter Phone" name="phone" th:field="*{phone}" required>
+        <button type="submit">Create Account</button>
+    </div>
+</form>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+a, a:visited, a:hover, a:active {
+    color: #4f2ea3;
+    text-decoration: none;
+}
+
+Body {
+    font-family: Calibri, Helvetica, sans-serif;
+    background-color: #D0B8A8;
+}
+
+h1, h2{
+    font-family: 'Housttely Signature', sans-serif;
+    font-style: normal;
+    width: 100%;
+    font-weight: 400;
+    font-size: 65px;
+    display: incline-block;
+    text-align: center;
+    text-transform: capitalize;
+    font-feature-settings: 'liga' off;
+    color: #815B5B;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom:0px;
+}
+
+h2{
+    font-family: 'Savoye LET', sans-serif;
+    font-size: 25px;
+    color: #815B5B;
+}
+
+p, th,tr{
+    font-family: 'Asbigan', sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 27px;
+    padding:0px;
+    margin: 2px;
+    margin-left: 20px;
+    color: #815B5B;
+}
+
+.msgs{
+    font-size: 25px;
+    text-transform: capitalize;
+    color: #F8EDE3;
+}
+
+h3{
+    color: #815B5B;
+}
+
+button{
+    margin-left: 20px;
+    background-color: #F8EDE3;
+    border-color: #815B5B;
+    color: #F8EDE3;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+td {
+  text-align: center;
+  margin: 2px;
+  vertical-align: center;
+}
+
+#contracts table, #tasks table {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#contracts table tr, #tasks table tr {
+  border-bottom: 0.6pt solid #815B5B;
+}
+

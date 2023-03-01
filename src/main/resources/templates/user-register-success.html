@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Registration Data</title>
+  <link th:href="@{/CSS/user-registration-success.css}" rel="stylesheet" />
+</head>
+<body>
+<div align="center">
+  <h1>Success! Registered User Information</h1>
+  <div>
+    <p>Name: <strong th:text="${user.firstName} + ' ' + ${user.lastName}"></strong></p>
+    <p>Username: <strong th:text="${user.username}"></strong></p>
+    <p>Password: <strong th:text="${user.password}"></strong></p>
+    <p>Email: <strong th:text="${user.email}"></strong></p>
+    <p>Phone: <strong th:text="${user.phone}"></strong></p>
+    Go to <a th:href="@{'/dashboard/{username}'(username=${user.username})}">my dashboard</a>
+  </div>
+</div>
+
+</body>
+</html>

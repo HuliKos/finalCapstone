@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Add Task Page</title>
+  <link th:href="@{/CSS/user-login.css}" rel="stylesheet" />
+</head>
+
+<body>
+<center> <h1> Create New Task </h1> </center>
+<form action="#" th:action="@{'/{username}/contract/{contract_id}/add-task-result'(username=${username},
+contract_id=${contract_id})}" th:object="${task}" method="post">
+  <div class="container">
+    <p class="msg"><strong th:if="${msg != null}" th:text="${msg}"></strong></p>
+    <label>Name: </label>
+    <input type="text" placeholder="Enter Task Name" name="name" th:field="*{name}" required>
+    <button type="submit">Create Task</button>
+  </div>
+</form>
+</body>
+
+</html>

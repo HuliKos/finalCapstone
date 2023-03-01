@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Contract Central User Dashboard</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link th:href="@{/CSS/user-dashboard.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1>Contract Central</h1>
+            <h2>A one-stop shop for contract management</h2>
+        </header>
+      <div class="container grid row" align="center">
+        <div class="column">
+            <h3>User Info</h3>
+            <div id="users">
+              <p class="msgs"><strong th:if="${msg != null}" th:text="${msg}"></strong></p>
+
+              <p th:text="'Username: ' + ${user.username}"></p>
+              <p th:text="'Name: ' + ${user.firstName} + ' ' + ${user.lastName}"></p>
+              <p th:text="'Email: ' + ${user.email}"></p>
+              <p th:text="'Phone: ' + ${user.phone}"></p>
+
+              <p><a th:href="@{'/dashboard/{username}/chpass'(username=${user.username})}">Change Password</a></p>
+              <p th:if="${#lists.isEmpty(contracts)}"><a th:href="@{'/dashboard/{username}/delete'(username=${user.username})}">Delete Account</a></p>
+              <p><a th:href="@{'/'}">Log Out</a></p>
+          </div>
+        </div>
+        <div class="column">
+            <h3>Open Contracts</h3>
+            <div id="contracts">
+                <p><a th:href="@{'/{username}/add-contract'(username=${user.username})}">+ New Contract</a></p>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Amount</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="contract : ${contracts}">
+                        <td th:text="${contract.title}"></td>
+                        <td th:text="${contract.amount}"></td>
+                        <td th:text="${contract.startDate}"></td>
+                        <td th:text="${contract.endDate}"></td>
+                        <td><a th:href="@{'/{username}/contract/{contract_id}/add-task'(username=${user.username},
+                    contract_id=${contract.id})}">add task</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br/>
+            <h3>Open Tasks</h3>
+            <div id="tasks">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Contract</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="task : ${tasks}">
+                        <td th:text="${task.name}"></td>
+                        <td th:text="${task.status} == true ? 'active' : 'completed'"></td>
+                        <td th:text="${task.contract.title}"></td>
+                        <td th:if="${task.status == true}"><a th:href="@{'/{username}/task/{task_id}/complete'(username=${user.username}, task_id=${task.id})}">complete</a></td>
+                        <td th:unless="${task.status == true}">&#x2713;</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+      </div>
+
+    </body>
+</html>
+
